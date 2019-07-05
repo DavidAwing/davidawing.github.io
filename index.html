@@ -10,7 +10,7 @@
     <script src="~/Scripts/Highcharts-7.1.2/code/highcharts-3d.js"></script>
     <script src="~/Scripts/Highcharts-7.1.2/code/modules/exporting.js"></script>
     <script src="~/Scripts/Highcharts-7.1.2/code/modules/export-data.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
 
@@ -197,7 +197,43 @@
 <p>1</p>
 <p>1</p>
 
+    
+       <script>
 
+             
+    $(function () {
+
+    //展开关闭导航菜单
+    $(".ce > li > a").click(function(){
+	     //$(this).addClass("xz").parents().siblings().find("a").removeClass("xz");
+		 //$(this).parents().siblings().find(".er").hide(300);
+		 $(this).siblings(".er").toggle(300);//下拉展开切换
+		 //$(this).parents().siblings().find(".er > li > .thr").hide().parents().siblings().find(".thr_nr").hide();
+		
+	})
+	
+    //$(".er > li > a").click(function(){
+    //    $(this).addClass("sen_x").parents().siblings().find("a").removeClass("sen_x");
+    //    $(this).parents().siblings().find(".thr").hide(300);	
+	//    $(this).siblings(".thr").toggle(300);	
+	//})
+
+    //$(".thr > li > a").click(function(){
+	//     $(this).addClass("xuan").parents().siblings().find("a").removeClass("xuan");
+	//	 $(this).parents().siblings().find(".thr_nr").hide();	
+	//     $(this).siblings(".thr_nr").toggle();
+	//})
+
+
+
+
+
+
+});
+
+
+    </script>
+  
 
 </body>
 </html>
