@@ -1,1 +1,203 @@
-sdfsfds
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>图表</title>
+
+    <script src="~/Scripts/Highcharts-7.1.2/code/highcharts.js"></script>
+    <script src="~/Scripts/Highcharts-7.1.2/code/highcharts-3d.js"></script>
+    <script src="~/Scripts/Highcharts-7.1.2/code/modules/exporting.js"></script>
+    <script src="~/Scripts/Highcharts-7.1.2/code/modules/export-data.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+
+
+
+
+    <style type="text/css">
+       
+         /*设置了高度，可以上下滚动*/
+        body {
+            height: 900px;
+            background: #FFC0CB;
+        }
+
+
+        /*浮动导航*/
+        #Navigation {
+            background: #ADFF2F;
+            color: #ffffff;
+            overflow: hidden;
+            z-index: 9999;
+            position: fixed;
+            padding: 5px;
+            top: 0px;
+            right:0px;
+            text-align: left;
+            width: 175px;
+            height: 200px;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            font-size:20px;
+        }
+
+
+        a{
+            text-decoration:none
+
+        }
+      
+
+ 
+
+    </style>
+
+
+</head>
+<body>
+    <p>展示各种图表样式</p>
+    <div id="Navigation" align="right">
+       
+        <ul class="ce" > 
+
+            <li style="margin-left:-30px;margin-top:-10px;list-style:none">
+
+                <a href="#"> 饼图样式 <img class="more" src="~/images/more.png" />  </a>
+
+                <ul class="er" style="list-style:none; margin-left:-20px">
+                    <li> <a href="##" >二级目录A</a> </li>
+                    <li> <a href="##">二级目录B</a> </li>
+                    <li> <a href="##">二级目录C</a> </li>
+                    <li> <a href="##">二级目录D</a> </li>
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <script src="~/Scripts/NavigationMain.js"></script>
+
+
+    <div id="container" style="height: 400px"></div>
+
+    <script type="text/javascript">
+
+        Highcharts.chart('container', {
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45,  //饼图显示的角度
+                    beta: 0
+                }
+            },
+            title: {
+                text: 'Browser market shares at a specific website, 2014'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    depth: 15,//饼图厚度
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Firefox', 45.0],
+                    ['IE', 26.8],
+                    {
+                        name: 'Chrome',
+                        y: 12.8,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['Safari', 8.5],
+                    ['Opera', 6.2],
+                    ['Others', 0.7]
+                ]
+            }]
+        });
+    </script>
+
+
+    <p>1</p>
+    <p>1</p>
+
+    <p>1</p><p>1</p><p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p><p>1</p><p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p>
+    <p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p><p>1</p><p>1</p><p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+
+
+
+</body>
+</html>
