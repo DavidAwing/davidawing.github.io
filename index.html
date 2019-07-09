@@ -93,7 +93,7 @@
     <script src="~/Scripts/NavigationMain.js"></script>
 
 
-    <div id="container" style="height: 400px"></div>
+    <div id="container" style="height: 400px; right:60px; left:60px"></div>
 
     <script type="text/javascript">
 
@@ -222,17 +222,17 @@
 		
 	})
 	
-    //$(".er > li > a").click(function(){
-    //    $(this).addClass("sen_x").parents().siblings().find("a").removeClass("sen_x");
-    //    $(this).parents().siblings().find(".thr").hide(300);	
-	//    $(this).siblings(".thr").toggle(300);	
-	//})
+    $(".er > li > a").click(function(){
+       $(this).addClass("sen_x").parents().siblings().find("a").removeClass("sen_x");
+       $(this).parents().siblings().find(".thr").hide(300);	
+	   $(this).siblings(".thr").toggle(300);	
+	})
 
-    //$(".thr > li > a").click(function(){
-	//     $(this).addClass("xuan").parents().siblings().find("a").removeClass("xuan");
-	//	 $(this).parents().siblings().find(".thr_nr").hide();	
-	//     $(this).siblings(".thr_nr").toggle();
-	//})
+    $(".thr > li > a").click(function(){
+	    $(this).addClass("xuan").parents().siblings().find("a").removeClass("xuan");
+		 $(this).parents().siblings().find(".thr_nr").hide();	
+	    $(this).siblings(".thr_nr").toggle();
+	})
 
 
 
