@@ -1,1 +1,295 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>图表</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/highcharts/7.1.2/highcharts.js"></script>
+    <script src="https://cdn.bootcss.com/highcharts/7.1.2/highcharts-3d.js"></script>
+    <script src="https://cdn.bootcss.com/highcharts/7.1.2/highcharts-more.js"></script>
+    <script src="https://cdn.bootcss.com/highcharts/7.1.2/modules/exporting.js"></script>
+    <script src="https://cdn.bootcss.com/highcharts/7.1.2/modules/export-data.js"></script>
+
+    <style type="text/css">
+        /*设置了高度，可以上下滚动
+            https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562697272958&di=955c90f724101fba328523984ebf0961&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201507%2F26%2F20150726092045_UVwEn.jpeg
+            https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562700842468&di=efbdbbd0925e4ee2ef1e7a302a6c70cd&imgtype=0&src=http%3A%2F%2Fcdn1.mmia.com%2Fo_1as15vagr8o9156j1t5qsqbjsd21.jpg%3F%2Fwatermark%2F1%2Fimage%2FaHR0cDovL2NkbjEubW1pYS5jb20vbW1pYV9tYXJrLnBuZw%3D%3D%2Fdissolve%2F50%2Fgravity%2FSouthEast%2Fdx%2F25%2Fdy%2F25%2Fauto-orient
+        https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562701330880&di=021185433e89e7a768129640dff8cf20&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Ff%2F58fd63b17b84e.jpg
+            
+            */
+        body {
+            height: 1900px;
+            background: #FFC0CB;
+            background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562701330880&di=021185433e89e7a768129640dff8cf20&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Ff%2F58fd63b17b84e.jpg);
+            background-size: 100%;
+           
+             }
+
+
+
+        /*浮动导航*/
+        #Navigation {
+            background-color: transparent;
+            /*             background: #ADFF2F; */
+            /*             color: #ffffff; */
+            overflow: hidden;
+            z-index: 9999;
+            position: fixed;
+            padding: 5px;
+            top: 10px;
+            right: 20px;
+            text-align: left;
+            width: auto; /*随内容自动缩放*/
+            height: auto;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            font-size: 20px;
+        }
+
+
+        /*去掉a标签下划线*/
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+            a:hover {
+                color: rgb(253,83,49);
+                background: none;
+            }
+    </style>
+
+</head>
+<body>
+    <h1>展示各种图表样式</h1>
+
+    <div id="Navigation" align="right">
+
+        <ul class="menus">
+            <li style="margin-left:-30px;margin-top:-10px;list-style:none">
+                <!-- 注意:img标签的宽高定义需放在src属性定义之后才能生效 -->
+                <a href="#">
+                    饼图
+
+                    <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg>
+
+                    <img hidden class="more" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562650211732&di=ecf68ca454f64d94f9d82b1851808560&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F00%2F92%2F56%2F9356f2289c45293.jpg"
+                         width="26" height="26" />
+
+                </a>
+                <ul class="submenu" style="list-style:none; margin-left:-20px">
+                    <li> <a href="#container">3D饼图</a> </li>
+                    <li> <a href="##">1二级目录B</a> </li>
+                    <li> <a href="##">1二级目录C</a> </li>
+                    <li> <a href="##">1二级目录D</a> </li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <ul class="menus">
+            <li style="margin-left:-30px;margin-top:-10px;list-style:none">
+                <!-- 注意:img标签的宽高定义需放在src属性定义之后才能生效 -->
+                <a href="#">
+                    折线图
+
+                    <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg>
+
+                    <img hidden class="more" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562650211732&di=ecf68ca454f64d94f9d82b1851808560&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F00%2F92%2F56%2F9356f2289c45293.jpg"
+                         width="26" height="26" />
+
+                </a>
+
+                <ul class="submenu" style="list-style:none; margin-left:-20px">
+                    <li> <a href="##">2二级目录A</a> </li>
+                    <li> <a href="##">2二级目录B</a> </li>
+                    <li> <a href="##">2二级目录C</a> </li>
+                    <li> <a href="##">2二级目录D</a> </li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="menus">
+            <li style="margin-left:-30px;margin-top:-10px;list-style:none">
+                <!-- 注意:img标签的宽高定义需放在src属性定义之后才能生效 -->
+                <a href="#">
+                    柱状图
+
+                    <svg class="octicon octicon-mark-github v-align-middle" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" /></svg>
+
+                    <img hidden class="more" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562650211732&di=ecf68ca454f64d94f9d82b1851808560&imgtype=0&src=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F00%2F92%2F56%2F9356f2289c45293.jpg"
+                         width="26" height="26" />
+
+                </a>
+                <ul class="submenu" style="list-style:none; margin-left:-20px">
+                    <li> <a href="##">3二级目录A</a> </li>
+                    <li> <a href="##">3二级目录B</a> </li>
+                    <li> <a href="##">3二级目录C</a> </li>
+                    <li> <a href="##">3二级目录D</a> </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div id="container"  name="container" style="height: 400px; margin-left:10%;  margin-right: 10%;  background-color:yellow; background:none;"></div>
+    <script type="text/javascript">
+
+        Highcharts.chart('container', {
+            chart: {
+                backgroundColor: 'transparent',
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45,  //饼图显示的角度
+                    beta: 0
+                }
+            },
+            title: {
+                text: 'Browser market shares at a specific website, 2014'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    depth: 35,//饼图厚度
+                    dataLabels: {
+                        enabled: true, //是否显示标签
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Browser share',
+                data: [
+                    ['Firefox', 45.0],
+                    ['IE', 26.8],
+                    {
+                        name: 'Chrome',
+                        y: 12.8,
+                        sliced: true,
+                        selected: true
+                    },
+                    ['Safari', 8.5],
+                    ['Opera', 6.2],
+                    ['Others', 0.7]
+                ]
+            }]
+        });
+    </script>
+
+    <script>
+
+        //关闭所有
+        window.onload = function () {
+        //    $(".menus > li > a").parents().siblings().find(".submenu").hide(100);//关闭所有目录
+            $(".menus").first().siblings().find(".submenu").hide(0);//隐藏除第一个菜单外的所有二级菜单
+        };
+
+        $(function () {
+
+            //展开关闭导航菜单
+            //$(".menus > li > a"):在给定的父元素下匹配所有的子元素
+            $(".menus > li > a").click(function () {
+                $(this).parents().siblings().find(".submenu").hide(100);//关闭所有目录
+                $(this).siblings(".submenu").toggle(100);//切换选择的目录
+            });
+
+            //切换选择的颜色
+            $(".submenu > li > a").click(function () {
+                $(".submenu > li > a").css("color", "black");
+                $(this).css("color", "red");
+            });
+
+        });
+
+
+    </script>
+
+
+
+    <script type="text/javascript">
+        //雪花飘落效果
+        (function ($) {
+            $.fn.snow = function (options) {
+                var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('❄'),
+                documentHeight = $(document).height(),
+                documentWidth = $(document).width(),
+                defaults = {
+                    minSize: 10,
+                    maxSize: 20,
+                    newOn: 1000,
+                    flakeColor: "#FFFFFF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                },
+                options = $.extend({}, defaults, options);
+                var interval = setInterval(function () {
+                    var startPositionLeft = Math.random() * documentWidth - 100,
+                    startOpacity = 0.5 + Math.random(),
+                    sizeFlake = options.minSize + Math.random() * options.maxSize,
+                    endPositionTop = documentHeight - 200,
+                    endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                    durationFall = documentHeight * 10 + Math.random() * 5000;
+                    $flake.clone().appendTo('body').css({
+                        left: startPositionLeft,
+                        opacity: startOpacity,
+                        'font-size': sizeFlake,
+                        color: options.flakeColor
+                    }).animate({
+                        top: endPositionTop,
+                        left: endPositionLeft,
+                        opacity: 0.2
+                    }, durationFall, 'linear', function () {
+                        $(this).remove()
+                    });
+                }, options.newOn);
+            };
+        })(jQuery);
+        $(function () {
+            $.fn.snow({
+                minSize: 5, /* 定义雪花最小尺寸 */
+                maxSize: 50,/* 定义雪花最大尺寸 */
+                newOn: 300  /* 定义密集程度，数字越小越密集 */
+            });
+        });
+    </script>
+
+    @* 以下实现的是斜着飘的雪花 *@
+    @* snowy.js地址: http://www.lmlblog.com/winter/templets/xq/js/snowy.js *@
+    @* Snow.js地址: http://www.lmlblog.com/blog/12/js/Snow.js *@
+    <script src="~/Scripts/snowy.js"></script>
+    <script src="~/Scripts/Snow.js"></script>
+    <style type="text/css">
+        .snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100001;
+        }
+    </style>
+    <div class="snow-container"></div>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?c737dbf9f7869288ee612a6620a3916a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+
+</body>
+</html>
