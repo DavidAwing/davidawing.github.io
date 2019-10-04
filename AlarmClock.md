@@ -1,8 +1,38 @@
 
+<h1>AlarmClockMain.java</h1>
+```java
+
+package com.wing.AlarmClock;
+
+import java.awt.*;
+
+//绘制一个时钟
+public class AlarmClockMain {
+
+	public static void main(String[] args) {
+
+		int width = 800, height = 800;
+		AlamClock alarmClock = new AlamClock(width/2, height/2);
+		alarmClock.setSize(width, height);
+		alarmClock.setVisible(true);
+		alarmClock.setResizable(false);
+		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+		//设置窗口的位置到屏幕中心
+		alarmClock.setLocation((screen.width-width)/2,(screen.height-height)/2);
+		alarmClock.start();
+		System.out.println("finish");
+	}
+
+}
+
+
+```
+
+
 <h1>AlamClock.java</h1>
 
 ```java
-  package com.wing.draw.AlarmClock;
+package com.wing.AlarmClock;
 
 import java.awt.*;
 import java.awt.event.WindowEvent;
@@ -286,3 +316,6 @@ public class AlamClock extends javax.swing.JFrame {
 }
 
 ```
+
+
+
