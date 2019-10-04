@@ -1,5 +1,6 @@
 
 <h1>AlarmClockMain.java</h1>
+
 ```java
 
 package com.wing.AlarmClock;
@@ -22,7 +23,6 @@ public class AlarmClockMain {
 		alarmClock.start();
 		System.out.println("finish");
 	}
-
 }
 
 
