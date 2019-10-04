@@ -1,6 +1,6 @@
 
 <h1>AlamClock.java</h1>
-```java
+``` java
 
 
 import java.awt.*;
