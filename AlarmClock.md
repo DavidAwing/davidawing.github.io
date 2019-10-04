@@ -9,7 +9,7 @@
 <a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alamclockjava'>AlamClock</a>
 
 
-![Image text](https://raw.github.com/yourName/repositpry/master/yourprojectName/img-folder/test.jpg)
+![Image text](https://raw.githubusercontent.com/DavidAwing/davidawing.github.io/master/image/AlarmClock.PNG)
 
 <h1>AlarmClockMain.java</h1>
 
