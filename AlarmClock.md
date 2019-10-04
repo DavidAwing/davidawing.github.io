@@ -32,8 +32,137 @@ public class AlarmClockMain {
 
 ```java
  
-   return "hello/hello";
- 
+package com.wing.AlarmClock;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+//时间转化为角度
+public class TimeToAngle {
+
+	public void main(String[] args) {
+		System.out.println(getCurrentHour());
+		System.out.println(getCurrentMinute());
+		System.out.println(getCurrentSecond());
+	}
+	
+	//获取当前小时
+	public int getCurrentHour() {
+		return new GregorianCalendar().get(Calendar.HOUR_OF_DAY);
+	}
+	
+	//获取当前分钟
+	public int getCurrentMinute() {
+		return new GregorianCalendar().get(Calendar.MINUTE);
+	}
+	
+	//获取当前秒
+	public int getCurrentSecond() {
+		return new GregorianCalendar().get(Calendar.SECOND);
+	}
+	
+	//获取当前时针的角度
+	public int currentHourToAngle() {
+		int angle = -1;
+		angle = (int)(getCurrentHour() * 30 + getCurrentMinute() * 0.5 - 90);
+		return angle;
+	}
+	
+	//获取当前分针的角度
+	public int currentMinuteToAngle() {
+		int angle = -1;
+		angle = getCurrentMinute() * 6 - 90;
+		return angle;
+	}
+	
+	//获取当前秒针的角度
+	public int currentSecondToAngle() {
+		int angle = -1;
+		angle = getCurrentSecond() * 6 - 90;
+		return angle;
+	}
+
+} 
+```
+
+<h1>PlaySoundThread.java</h1>
+
+
+```java
+
+package com.wing.AlarmClock;
+//播放声音
+
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+
+import javazoom.jl.player.Player;
+
+public class PlaySoundThread extends Thread {
+	String filename;
+
+	public PlaySoundThread(String filename) {
+		this.filename = filename;
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			play(filename);
+		}
+	}
+
+	public void play(String filename) {
+		try {
+			InputStream input = this.getClass().getResourceAsStream("/sound/dida.mp3");  
+			BufferedInputStream buffer = new BufferedInputStream(input);
+			Player player = new Player(buffer);
+			player.play();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+```
+
+<h1>DrawThread.java</h1>
+
+```java
+package com.wing.AlarmClock;
+
+import javax.swing.*;
+
+//驱动重绘视图
+public class DrawThread extends Thread {
+
+	JFrame jFrame;
+	int millis;
+
+	public DrawThread(JFrame jFrame) {
+		this.jFrame = jFrame;
+		this.millis = 1000;
+	}
+
+	public DrawThread(JFrame jFrame, int millis) {
+		this.jFrame = jFrame;
+		this.millis = millis;
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			try {
+				jFrame.update(jFrame.getGraphics());
+				Thread.sleep(millis);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} 
+		}
+	}
+
+}
 ```
 
 
