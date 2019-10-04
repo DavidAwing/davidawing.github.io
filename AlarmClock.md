@@ -9,7 +9,7 @@
 <a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alamclockjava'>AlamClock</a>
 
 
-<img scr='https://raw.githubusercontent.com/DavidAwing/davidawing.github.io/master/image/AlarmClock.PNG'>
+<img scr='https://raw.githubusercontent.com/DavidAwing/davidawing.github.io/master/image/AlarmClock.PNG'/>
 
 
 <h1>AlarmClockMain.java</h1>
