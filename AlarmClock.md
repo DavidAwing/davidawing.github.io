@@ -7,7 +7,6 @@ package com.wing.AlarmClock;
 
 import java.awt.*;
 
-//绘制一个时钟
 public class AlarmClockMain {
 
 	public static void main(String[] args) {
@@ -26,6 +25,14 @@ public class AlarmClockMain {
 }
 
 
+```
+
+
+<h1>TimeToAngle.java</h1>
+```java
+ 
+   return "hello/hello";
+ 
 ```
 
 
