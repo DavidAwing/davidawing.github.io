@@ -1,7 +1,10 @@
-
-<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alamclockjava'>AlarmClock<>
-
-
+<p>目录</p>
+<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alarmclockmainjava'>AlarmClockMain</a>
+<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#timetoanglejava'>AlarmClock</a>
+<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#playsoundthreadjava'>PlaySoundThread</a>
+<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#drawthreadjava'>DrawThread</a>
+<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alamclockjava'>AlamClock</a>
+ 
 
 
 <h1>AlarmClockMain.java</h1>
