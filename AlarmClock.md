@@ -1,18 +1,17 @@
 <p>目录</p>
 
-<div>
-	
-	<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alarmclockmainjava'>AlarmClockMain</a>
-	<font color=#ff0000 size=22>(启动类)</font>
-	
-<div>
+<a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alarmclockmainjava'>AlarmClockMain</a>
+</br>
 
 <a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#timetoanglejava'>AlarmClock</a>
 </br>
+
 <a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#playsoundthreadjava'>PlaySoundThread</a>
 </br>
+
 <a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#drawthreadjava'>DrawThread</a>
 </br>
+
 <a href='https://github.com/DavidAwing/davidawing.github.io/blob/master/AlarmClock.md#alamclockjava'>AlamClock</a>
 
 
